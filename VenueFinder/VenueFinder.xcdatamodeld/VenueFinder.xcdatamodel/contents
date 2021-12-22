@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21A559" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AddressEntity" representedClassName="AddressEntity" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String"/>
+        <attribute name="country" optional="YES" attributeType="String"/>
+        <attribute name="locality" optional="YES" attributeType="String"/>
+        <attribute name="postcode" optional="YES" attributeType="String"/>
+        <attribute name="region" optional="YES" attributeType="String"/>
+        <relationship name="ofVenue" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="VenueEntity" inverseName="addressDetails" inverseEntity="VenueEntity"/>
+    </entity>
+    <entity name="CategoryEntity" representedClassName="CategoryEntity" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="icon" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="IconEntity" inverseName="ofCategory" inverseEntity="IconEntity"/>
+        <relationship name="ofVenue" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="VenueEntity" inverseName="categories" inverseEntity="VenueEntity"/>
+    </entity>
+    <entity name="GeoLocationsEntity" representedClassName="GeoLocationsEntity" syncable="YES">
+        <relationship name="geoPoint" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GeoPointEntity" inverseName="ofGeoLocations" inverseEntity="GeoPointEntity"/>
+        <relationship name="ofVenue" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="VenueEntity" inverseName="geoLocations" inverseEntity="VenueEntity"/>
+    </entity>
+    <entity name="GeoPointEntity" representedClassName="GeoPointEntity" syncable="YES">
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="ofGeoLocations" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GeoLocationsEntity" inverseName="geoPoint" inverseEntity="GeoLocationsEntity"/>
+    </entity>
+    <entity name="IconEntity" representedClassName="IconEntity" syncable="YES">
+        <attribute name="iconUrl" optional="YES" attributeType="String"/>
+        <relationship name="ofCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CategoryEntity" inverseName="icon" inverseEntity="CategoryEntity"/>
+    </entity>
+    <entity name="ResultEntity" representedClassName="ResultEntity" syncable="YES">
+        <relationship name="venue" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="VenueEntity" inverseName="ofResult" inverseEntity="VenueEntity"/>
+    </entity>
+    <entity name="VenueEntity" representedClassName="VenueEntity" syncable="YES">
+        <attribute name="distance" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="fsq_id" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="venueTimeZone" optional="YES" attributeType="String"/>
+        <relationship name="addressDetails" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AddressEntity" inverseName="ofVenue" inverseEntity="AddressEntity"/>
+        <relationship name="categories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CategoryEntity" inverseName="ofVenue" inverseEntity="CategoryEntity"/>
+        <relationship name="geoLocations" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GeoLocationsEntity" inverseName="ofVenue" inverseEntity="GeoLocationsEntity"/>
+        <relationship name="ofResult" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ResultEntity" inverseName="venue" inverseEntity="ResultEntity"/>
+    </entity>
+    <elements>
+        <element name="AddressEntity" positionX="-63" positionY="-18" width="128" height="119"/>
+        <element name="IconEntity" positionX="-54" positionY="-9" width="128" height="59"/>
+        <element name="ResultEntity" positionX="-36" positionY="9" width="128" height="44"/>
+        <element name="CategoryEntity" positionX="-18" positionY="27" width="128" height="89"/>
+        <element name="VenueEntity" positionX="0" positionY="45" width="128" height="149"/>
+        <element name="GeoLocationsEntity" positionX="18" positionY="63" width="128" height="59"/>
+        <element name="GeoPointEntity" positionX="36" positionY="81" width="128" height="74"/>
+    </elements>
+</model>

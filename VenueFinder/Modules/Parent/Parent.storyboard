@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Venue Finder-->
+        <scene sceneID="8YX-UQ-omS">
+            <objects>
+                <viewController storyboardIdentifier="ParentViewController" modalPresentationStyle="fullScreen" id="lLz-yX-5p2" customClass="ParentViewController" customModule="VenueFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RnL-lB-1gj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Pbm-M0-0CI">
+                                <rect key="frame" x="117" y="64" width="180" height="41"/>
+                                <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="4C0-gZ-qBD"/>
+                                    <constraint firstAttribute="height" constant="40" id="Rd7-jW-R9p"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Venues"/>
+                                    <segment title="About us"/>
+                                </segments>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="selectedSegmentTintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="segmentedControlDidChange:" destination="lLz-yX-5p2" eventType="valueChanged" id="Tf9-QN-Ddp"/>
+                                </connections>
+                            </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="INH-tL-UW0">
+                                <rect key="frame" x="0.0" y="124" width="414" height="738"/>
+                                <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="M4S-iE-fEa"/>
+                        <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="INH-tL-UW0" firstAttribute="leading" secondItem="M4S-iE-fEa" secondAttribute="leading" id="LKb-MU-t6R"/>
+                            <constraint firstItem="Pbm-M0-0CI" firstAttribute="top" secondItem="M4S-iE-fEa" secondAttribute="top" constant="20" id="M2h-oq-Twj"/>
+                            <constraint firstItem="INH-tL-UW0" firstAttribute="top" secondItem="Pbm-M0-0CI" secondAttribute="bottom" constant="20" id="NPv-eC-QCP"/>
+                            <constraint firstItem="M4S-iE-fEa" firstAttribute="bottom" secondItem="INH-tL-UW0" secondAttribute="bottom" id="Urh-Pe-57d"/>
+                            <constraint firstItem="Pbm-M0-0CI" firstAttribute="centerX" secondItem="RnL-lB-1gj" secondAttribute="centerX" id="VnX-GK-BOV"/>
+                            <constraint firstItem="M4S-iE-fEa" firstAttribute="trailing" secondItem="INH-tL-UW0" secondAttribute="trailing" id="uW8-Rg-vCY"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Venue Finder" id="aOs-Ox-dW8"/>
+                    <connections>
+                        <outlet property="containerView" destination="INH-tL-UW0" id="0Jb-eC-8OS"/>
+                        <outlet property="segmentedControl" destination="Pbm-M0-0CI" id="Nqs-lR-bNU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UxA-0A-NqA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="944.92753623188412" y="98.4375"/>
+        </scene>
+    </scenes>
+</document>

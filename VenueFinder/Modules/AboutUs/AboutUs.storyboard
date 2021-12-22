@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--About Us View Controller-->
+        <scene sceneID="pW3-U5-jrZ">
+            <objects>
+                <viewController storyboardIdentifier="AboutUsViewController" id="Ocx-qY-Oa3" customClass="AboutUsViewController" customModule="VenueFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mGs-Fu-265">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venue Finder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5qN-Rs-Lsk">
+                                <rect key="frame" x="130" y="242" width="154" height="45"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="bQn-ay-w81">
+                                <rect key="frame" x="143" y="74" width="128" height="128"/>
+                                <color key="tintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="Wck-V7-MCr"/>
+                                    <constraint firstAttribute="height" constant="128" id="vRF-Gu-faf"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We find you the nearest 5 VENUES from your location" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYt-Qf-wii">
+                                <rect key="frame" x="40" y="327" width="334" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="V 1.0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Beg-Q6-6Ev">
+                                <rect key="frame" x="187.5" y="800.5" width="39" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ye2-kS-Fsf"/>
+                        <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Beg-Q6-6Ev" firstAttribute="centerX" secondItem="mGs-Fu-265" secondAttribute="centerX" id="7eA-j8-8cd"/>
+                            <constraint firstItem="JYt-Qf-wii" firstAttribute="leading" secondItem="ye2-kS-Fsf" secondAttribute="leading" constant="40" id="VGx-sf-j87"/>
+                            <constraint firstItem="ye2-kS-Fsf" firstAttribute="bottom" secondItem="Beg-Q6-6Ev" secondAttribute="bottom" constant="40" id="aFz-hr-Gow"/>
+                            <constraint firstItem="5qN-Rs-Lsk" firstAttribute="centerX" secondItem="mGs-Fu-265" secondAttribute="centerX" id="im9-T5-3Jt"/>
+                            <constraint firstItem="ye2-kS-Fsf" firstAttribute="trailing" secondItem="JYt-Qf-wii" secondAttribute="trailing" constant="40" id="ljb-O5-vvK"/>
+                            <constraint firstItem="bQn-ay-w81" firstAttribute="top" secondItem="ye2-kS-Fsf" secondAttribute="top" constant="30" id="po1-rR-Hgv"/>
+                            <constraint firstItem="JYt-Qf-wii" firstAttribute="top" secondItem="5qN-Rs-Lsk" secondAttribute="bottom" constant="40" id="rpD-Aj-97N"/>
+                            <constraint firstItem="5qN-Rs-Lsk" firstAttribute="top" secondItem="bQn-ay-w81" secondAttribute="bottom" constant="40" id="taj-vd-aCZ"/>
+                            <constraint firstItem="bQn-ay-w81" firstAttribute="centerX" secondItem="mGs-Fu-265" secondAttribute="centerX" id="wJX-Pz-plh"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zvu-gB-jgI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="73.913043478260875" y="98.4375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="location" width="64" height="64"/>
+    </resources>
+</document>
