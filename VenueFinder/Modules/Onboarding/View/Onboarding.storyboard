@@ -18,14 +18,24 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venue Finder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAb-yy-7SU">
                                 <rect key="frame" x="116.5" y="421.5" width="181.5" height="53"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="33"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="jSi-OA-Me0">
+                                <rect key="frame" x="143" y="273.5" width="128" height="128"/>
+                                <color key="tintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="0VA-uI-AmN"/>
+                                    <constraint firstAttribute="height" constant="128" id="6Cn-P0-yMq"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="rAb-yy-7SU" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="3du-0w-9EE"/>
+                            <constraint firstItem="rAb-yy-7SU" firstAttribute="top" secondItem="jSi-OA-Me0" secondAttribute="bottom" constant="20" id="3in-X0-OFF"/>
+                            <constraint firstItem="jSi-OA-Me0" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="aHR-iv-hDz"/>
                             <constraint firstItem="rAb-yy-7SU" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="e2d-KW-nhq"/>
                         </constraints>
                     </view>
@@ -35,4 +45,7 @@
             <point key="canvasLocation" x="20" y="82"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="location" width="512" height="512"/>
+    </resources>
 </document>

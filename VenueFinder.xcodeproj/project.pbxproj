@@ -246,8 +246,7 @@
 		BEA4B1B02772427800239362 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				BEA4B1AA2772424800239362 /* Onboarding.storyboard */,
-				BEA4B1AC2772425C00239362 /* OnboardingViewController.swift */,
+				BEA4B2272773B2ED00239362 /* View */,
 				BEA4B1AE2772427300239362 /* OnboardingViewModel.swift */,
 				BEA4B21E2773829C00239362 /* OnboardingCoordinator.swift */,
 			);
@@ -268,8 +267,7 @@
 		BEA4B1B6277242CE00239362 /* Parent */ = {
 			isa = PBXGroup;
 			children = (
-				BEA4B1B72772431800239362 /* ParentViewController.swift */,
-				BEA4B1B92772432100239362 /* Parent.storyboard */,
+				BEA4B2262773B2B900239362 /* View */,
 				BEA4B1BB2772432A00239362 /* ParentViewModel.swift */,
 				BEA4B2202773831300239362 /* ParentCoordinator.swift */,
 			);
@@ -279,11 +277,10 @@
 		BEA4B1BD2772433000239362 /* VenueList */ = {
 			isa = PBXGroup;
 			children = (
+				BEA4B2282773B30B00239362 /* View */,
 				BEA4B218277327B700239362 /* Cells */,
 				BEA4B1BE2772436000239362 /* VenueListViewModel.swift */,
-				BEA4B1C02772436B00239362 /* VenueListViewController.swift */,
 				BEA4B2222773834A00239362 /* VenueListCoordinator.swift */,
-				BEA4B1C22772437400239362 /* VenueList.storyboard */,
 			);
 			path = VenueList;
 			sourceTree = "<group>";
@@ -291,8 +288,7 @@
 		BEA4B1C42772437900239362 /* AboutUs */ = {
 			isa = PBXGroup;
 			children = (
-				BEA4B1C7277243A400239362 /* AboutUs.storyboard */,
-				BEA4B1C9277243AC00239362 /* AboutUsViewController.swift */,
+				BEA4B2292773B31E00239362 /* View */,
 				BEA4B1CB277243B600239362 /* AboutIsViewModel.swift */,
 				BEA4B2242773837F00239362 /* AboutCoordinator.swift */,
 			);
@@ -320,6 +316,42 @@
 				BEA4B219277327D600239362 /* VenueListTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		BEA4B2262773B2B900239362 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BEA4B1B72772431800239362 /* ParentViewController.swift */,
+				BEA4B1B92772432100239362 /* Parent.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BEA4B2272773B2ED00239362 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BEA4B1AA2772424800239362 /* Onboarding.storyboard */,
+				BEA4B1AC2772425C00239362 /* OnboardingViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BEA4B2282773B30B00239362 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BEA4B1C02772436B00239362 /* VenueListViewController.swift */,
+				BEA4B1C22772437400239362 /* VenueList.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BEA4B2292773B31E00239362 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BEA4B1C7277243A400239362 /* AboutUs.storyboard */,
+				BEA4B1C9277243AC00239362 /* AboutUsViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
