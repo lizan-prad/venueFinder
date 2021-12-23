@@ -9,6 +9,7 @@ import UIKit
 
 class VenueListTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var venueNameLabel: UILabel!
     @IBOutlet weak var containerView: UIView!
@@ -20,6 +21,7 @@ class VenueListTableViewCell: UITableViewCell {
             venueNameLabel.text = viewModel?.name
             addressLabel.text = viewModel?.address
             venueImage.setImage(from: URLConfig.RandomImageUrls.venueUrls[viewModel?.index ?? 0])
+            distanceLabel.text = self.viewModel?.distance?.inKilometerOrMeter
         }
     }
     
@@ -32,5 +34,5 @@ class VenueListTableViewCell: UITableViewCell {
         self.containerView.addStandardBorder()
         self.gradientView.setGradient(UIColor.clear, endColor: UIColor.black.withAlphaComponent(1.0))
     }
-    
 }
+

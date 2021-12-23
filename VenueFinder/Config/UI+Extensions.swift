@@ -23,14 +23,14 @@ extension UIViewController {
 
 extension UIImageView {
     func setImage(from url: String) {
+        
         guard let imageURL = URL(string: url) else { return }
-
-        // just not to cause a deadlock in UI!
+        
         QueueConfig.backgroundQueue.async {
             guard let imageData = try? Data(contentsOf: imageURL) else { return }
-
+            
             let image = UIImage(data: imageData)
-
+            
             DispatchQueue.main.async {
                 self.image = image
             }
@@ -39,13 +39,13 @@ extension UIImageView {
 }
 
 extension UIView {
-
+    
     func activityStartAnimating(_ activityColor: UIColor? = .white, backgroundColor: UIColor? = .clear) {
         let backgroundView = UIView()
         backgroundView.frame = CGRect.init(x: 0, y: 0, width: self.bounds.width, height: self.bounds.height)
         backgroundView.backgroundColor = backgroundColor
         backgroundView.tag = 475647
-
+        
         var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
         activityIndicator = UIActivityIndicatorView(frame: CGRect.init(x: 0, y: 0, width: 50, height: 50))
         activityIndicator.center = self.center
@@ -54,25 +54,25 @@ extension UIView {
         activityIndicator.color = activityColor
         activityIndicator.startAnimating()
         self.isUserInteractionEnabled = false
-
+        
         backgroundView.addSubview(activityIndicator)
-
+        
         self.addSubview(backgroundView)
     }
-
+    
     func activityStopAnimating() {
         if let background = viewWithTag(475647) {
             background.removeFromSuperview()
         }
         self.isUserInteractionEnabled = true
     }
-
+    
     func addStandardBorder() {
         self.layer.borderColor = UIColor.init(hex: "C0C0C0").cgColor
         self.layer.borderWidth = 1.0
         self.layer.cornerRadius = 4
     }
-
+    
     func setGradient(_ startColor: UIColor, endColor: UIColor) {
         let gradientLayer = CAGradientLayer.init()
         gradientLayer.colors = [startColor.cgColor,
@@ -92,22 +92,22 @@ extension UIView {
 }
 
 extension UIColor {
-
+    
     convenience init(hex: String) {
         self.init(hex: hex, alpha: 1)
     }
-
+    
     convenience init(hex: String, alpha: CGFloat) {
         var hexWithoutSymbol = hex
         if hexWithoutSymbol.hasPrefix("#") {
             hexWithoutSymbol = hex.replacingOccurrences(of: "#", with: "")
         }
-
+        
         let scanner = Scanner(string: hexWithoutSymbol)
-        var hexInt: UInt32 = 0x0
-        scanner.scanHexInt32(&hexInt)
-
-        var red: UInt32!, green: UInt32!, blue: UInt32!
+        var hexInt: UInt64 = 0x0
+        scanner.scanHexInt64(&hexInt)
+        
+        var red: UInt64!, green: UInt64!, blue: UInt64!
         switch hexWithoutSymbol.count {
         case 3: // #RGB
             red = ((hexInt >> 4) & 0xf0 | (hexInt >> 8) & 0x0f)
@@ -120,24 +120,31 @@ extension UIColor {
         default:
             print("Hex error!")
         }
-
+        
         self.init(
             red: (CGFloat(red)/255),
             green: (CGFloat(green)/255),
             blue: (CGFloat(blue)/255),
             alpha: alpha)
     }
-
+    
     func toHexString() -> String {
         var red: CGFloat = 0
         var green: CGFloat = 0
         var blue: CGFloat = 0
         var alpha: CGFloat = 0
-
+        
         getRed(&red, green: &green, blue: &blue, alpha: &alpha)
-
+        
         let rgb: Int = (Int)(red*255)<<16 | (Int)(green*255)<<8 | (Int)(blue*255)<<0
-
+        
         return NSString(format: "#%06x", rgb) as String
+    }
+}
+
+extension Double {
+    
+    var inKilometerOrMeter: String  {
+        return (self/1000) < 1 ? "\(Int(self))m" : "\(self/1000)km"
     }
 }

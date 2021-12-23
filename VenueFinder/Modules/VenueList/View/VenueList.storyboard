@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Dey-jc-Aib">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Dey-jc-Aib">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
@@ -36,9 +36,9 @@
                                                             <color key="tintColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </imageView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EBe-ew-C6C">
-                                                            <rect key="frame" x="0.0" y="105" width="382" height="80"/>
+                                                            <rect key="frame" x="0.0" y="85" width="382" height="100"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="80" id="LAc-aP-AjW"/>
+                                                                <constraint firstAttribute="height" constant="100" id="LAc-aP-AjW"/>
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kathmandu" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ga2-bj-j0q">
@@ -51,24 +51,33 @@
                                                             <rect key="frame" x="0.0" y="185" width="382" height="50"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="marker" translatesAutoresizingMaskIntoConstraints="NO" id="Hzd-AH-JNK">
-                                                                    <rect key="frame" x="16" y="13" width="24" height="24"/>
+                                                                    <rect key="frame" x="16" y="15" width="20" height="20"/>
                                                                     <color key="tintColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="24" id="e7l-sy-Fm0"/>
-                                                                        <constraint firstAttribute="width" constant="24" id="esL-mo-IEM"/>
+                                                                        <constraint firstAttribute="height" constant="20" id="e7l-sy-Fm0"/>
+                                                                        <constraint firstAttribute="width" constant="20" id="esL-mo-IEM"/>
                                                                     </constraints>
                                                                 </imageView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kathmandu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m38-iQ-WdD">
-                                                                    <rect key="frame" x="44" y="16.5" width="74" height="17"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                    <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m38-iQ-WdD">
+                                                                    <rect key="frame" x="40" y="25" width="296" height="0.0"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfd-BK-yiR">
+                                                                    <rect key="frame" x="366" y="25" width="0.0" height="0.0"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
-                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="50" id="0cV-jf-VBm"/>
+                                                                <constraint firstItem="xfd-BK-yiR" firstAttribute="centerY" secondItem="m38-iQ-WdD" secondAttribute="centerY" id="Aj8-0w-lqr"/>
                                                                 <constraint firstItem="Hzd-AH-JNK" firstAttribute="centerY" secondItem="Jz5-nc-Vme" secondAttribute="centerY" id="KIr-Nb-Zri"/>
+                                                                <constraint firstAttribute="trailing" secondItem="xfd-BK-yiR" secondAttribute="trailing" constant="16" id="NCN-r5-UbE"/>
+                                                                <constraint firstItem="xfd-BK-yiR" firstAttribute="leading" secondItem="m38-iQ-WdD" secondAttribute="trailing" constant="30" id="Vct-WZ-VMV"/>
                                                                 <constraint firstItem="Hzd-AH-JNK" firstAttribute="leading" secondItem="Jz5-nc-Vme" secondAttribute="leading" constant="16" id="aa3-a3-VfR"/>
                                                                 <constraint firstItem="m38-iQ-WdD" firstAttribute="centerY" secondItem="Hzd-AH-JNK" secondAttribute="centerY" id="mCv-4g-fRq"/>
                                                                 <constraint firstItem="m38-iQ-WdD" firstAttribute="leading" secondItem="Hzd-AH-JNK" secondAttribute="trailing" constant="4" id="wLV-bo-LLR"/>
@@ -104,6 +113,7 @@
                                         <connections>
                                             <outlet property="addressLabel" destination="m38-iQ-WdD" id="4Uf-6k-lrb"/>
                                             <outlet property="containerView" destination="od1-sy-KXa" id="thf-mk-coL"/>
+                                            <outlet property="distanceLabel" destination="xfd-BK-yiR" id="mIX-wI-mmh"/>
                                             <outlet property="gradientView" destination="EBe-ew-C6C" id="sEv-xz-kPI"/>
                                             <outlet property="venueImage" destination="J5D-w2-z5s" id="oRD-wg-e7n"/>
                                             <outlet property="venueNameLabel" destination="ga2-bj-j0q" id="pq8-SY-IYO"/>
@@ -132,7 +142,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="location" width="512" height="512"/>
+        <image name="location" width="160" height="160"/>
         <image name="marker" width="292.5" height="417.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -14,6 +14,7 @@ struct VenueListTableViewCellModel {
     var image: URL?
     var region: String?
     var index: Int?
+    var distance: Double?
 }
 
 struct VenueListViewModel {
@@ -53,7 +54,7 @@ struct VenueListViewModel {
             case .success(let models):
                 if let models = models.first?.venue {
                     self.venues.value = Array(Array(models).map({
-                        VenueListTableViewCellModel.init(name: $0.name, address: $0.addressDetails?.address, image: URL.init(string: $0.categories?.first?.icon?.iconUrl ?? ""), region: $0.addressDetails?.region, index: 0)
+                        VenueListTableViewCellModel.init(name: $0.name, address: $0.addressDetails?.address, image: URL.init(string: $0.categories?.first?.icon?.iconUrl ?? ""), region: $0.addressDetails?.region, index: 0, distance: $0.distance)
                     }).prefix(5))
                 }
             case .failure(_):

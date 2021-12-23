@@ -9,7 +9,11 @@ import Foundation
 
 class AboutUsViewModel {
     
-    func getMainView() -> AboutUsViewController {
-        return AboutUsViewController.instantiateFromStoryboard(StoryboardConstants.aboutUs)
+    var appVersion: String? {
+        return "App Version \((Bundle.main.infoDictionary?[StringConstants.bundleVersionString] as? String) ?? "")"
+    }
+    
+    var aboutUsDescriptionString: String? {
+        return StringConstants.appDescriptionString
     }
 }

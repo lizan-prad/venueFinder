@@ -33,17 +33,24 @@ class NetworkManager {
                 return
             }
             DispatchQueue.main.async {
-                do {
-                    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-                    let plistDecoderForArticle = JSONDecoder()
-                    plistDecoderForArticle.userInfo[StringConstants.CoreDataContext.managedObjectContext!] = context
-                    let vaule =  try plistDecoderForArticle.decode(T.self, from: json)
-                    completion(.success(vaule))
-                } catch {
-                    completion(.failure(error))
-                }
+                self.coreDataDecoder(T.self, json: json, completion: completion)
             }
         }.resume()
+    }
+}
+
+extension NetworkManager {
+    
+    func coreDataDecoder<T: Decodable>(_ type: T.Type, json: Data, completion: @escaping CompletionHandler<T>) {
+        do {
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            let plistDecoderForArticle = JSONDecoder()
+            plistDecoderForArticle.userInfo[StringConstants.CoreDataContext.managedObjectContext!] = context
+            let vaule =  try plistDecoderForArticle.decode(T.self, from: json)
+            completion(.success(vaule))
+        } catch {
+            completion(.failure(error))
+        }
     }
 }
 

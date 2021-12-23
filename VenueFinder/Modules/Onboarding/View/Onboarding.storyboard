@@ -46,6 +46,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="location" width="512" height="512"/>
+        <image name="location" width="160" height="160"/>
     </resources>
 </document>
