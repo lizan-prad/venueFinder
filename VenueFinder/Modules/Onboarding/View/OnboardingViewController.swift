@@ -53,7 +53,7 @@ extension OnboardingViewController: LocationManagerDelegate {
     }
 
     func didAuthorizeAccess(_ manager: LocationManager) {
-        if viewModel.location.value != nil {
+        if viewModel.location.value != nil || UserDefaults.standard.bool(forKey: StringConstants.UserDefaultsKey.appHasData) {
             self.openParentViewController()
         }
     }

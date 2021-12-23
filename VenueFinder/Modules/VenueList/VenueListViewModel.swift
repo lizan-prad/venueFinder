@@ -27,7 +27,10 @@ struct VenueListViewModel {
     var venues: Observable<[VenueListTableViewCellModel]> = Observable([])
     
     func fetchVenues(failure: @escaping (UIAlertController) -> Void) {
-        guard let url = URL.init(string: URLConfig.venueList), let coordinate = LocationManager.shared.currentLocation?.coordinate else {return}
+        guard let url = URL.init(string: URLConfig.venueList), let coordinate = LocationManager.shared.currentLocation?.coordinate else {
+            self.fetchSavedData()
+            return
+        }
         let param: [String:String] = ["ll": "\(coordinate.latitude),\(coordinate.longitude)"]
         self.view?.activityStartAnimating()
         NetworkManager.shared.request(ResultEntity.self, withEndpoint: url, params: param) { result in
@@ -53,6 +56,7 @@ struct VenueListViewModel {
             switch result {
             case .success(let models):
                 if let models = models.first?.venue {
+                    UserDefaults.standard.set(!models.isEmpty, forKey: StringConstants.UserDefaultsKey.appHasData)
                     self.venues.value = Array(Array(models).map({
                         VenueListTableViewCellModel.init(name: $0.name, address: $0.addressDetails?.address, image: URL.init(string: $0.categories?.first?.icon?.iconUrl ?? ""), region: $0.addressDetails?.region, index: 0, distance: $0.distance)
                     }).prefix(5))

@@ -12,7 +12,7 @@ class NetworkManager {
     
     static let shared = NetworkManager()
     
-    enum RequestMethods: String {
+    fileprivate enum RequestMethods: String {
         case get = "GET"
         case post = "POST"
     }
@@ -41,7 +41,7 @@ class NetworkManager {
 
 extension NetworkManager {
     
-    func coreDataDecoder<T: Decodable>(_ type: T.Type, json: Data, completion: @escaping CompletionHandler<T>) {
+    fileprivate func coreDataDecoder<T: Decodable>(_ type: T.Type, json: Data, completion: @escaping CompletionHandler<T>) {
         do {
             let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
             let plistDecoderForArticle = JSONDecoder()

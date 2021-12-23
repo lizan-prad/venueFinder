@@ -18,6 +18,10 @@ enum StringConstants {
     enum CoreDataContext {
         static let managedObjectContext = CodingUserInfoKey(rawValue: "managedObjectContext")
     }
+    
+    enum UserDefaultsKey {
+        static let appHasData = "ApplicationHasData"
+    }
 
     enum CoreDataEntity {
         static let geoCodeEntity = "GeoPointEntity"
