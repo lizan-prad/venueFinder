@@ -26,7 +26,8 @@ class VenueDetailsViewController: UIViewController, Storyboarded {
         self.viewModel.venue.bind { model in
             self.venueNameLabel.text = model?.name
             self.handler = VenuePhotoCollectionViewHandler.init(photoList: model?.images ?? [])
-            self.photoView.setImage(from: model?.images?.first ?? "")
+            self.photoView.setImage(from: model?.images?.first ?? "", completion: nil)
+            
             self.setupCollectionView()
         }
     }

@@ -7,12 +7,6 @@
 
 import UIKit
 
-extension UIView {
-    
-    func setStandardCornerRadius() {
-        self.layer.cornerRadius = 4
-    }
-}
 
 extension UIViewController {
     
@@ -26,10 +20,11 @@ extension UIViewController {
         let controller = storyboard.instantiateViewController(withIdentifier: viewControllerIdentifier) as! T
         return controller
     }
+    
 }
 
 extension UIImageView {
-    func setImage(from url: String) {
+    func setImage(from url: String, completion: (() -> Void)?) {
         
         guard let imageURL = URL(string: url) else { return }
         
@@ -40,12 +35,18 @@ extension UIImageView {
             
             DispatchQueue.main.async {
                 self.image = image
+                completion?()
             }
         }
     }
 }
 
 extension UIView {
+    
+    func setStandardCornerRadius() {
+        self.layer.cornerRadius = 4
+    }
+    
     
     func activityStartAnimating(_ activityColor: UIColor? = .white, backgroundColor: UIColor? = .clear) {
         let backgroundView = UIView()
@@ -78,6 +79,15 @@ extension UIView {
         self.layer.borderColor = UIColor.init(hex: "C0C0C0").cgColor
         self.layer.borderWidth = 1.0
         self.layer.cornerRadius = 4
+    }
+    
+    func addHighlightedBorder() {
+        self.layer.borderColor = UIColor.init(hex: "ffffff").cgColor
+        self.layer.borderWidth = 2.0
+    }
+    
+    func removeHighlightedBorder() {
+        self.layer.borderWidth = 0
     }
     
     func setGradient(_ startColor: UIColor, endColor: UIColor) {

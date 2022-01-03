@@ -20,7 +20,7 @@ class VenueListTableViewCell: UITableViewCell {
         didSet {
             venueNameLabel.text = viewModel?.name
             addressLabel.text = viewModel?.address
-            venueImage.setImage(from: URLConfig.RandomImageUrls.venueUrls[viewModel?.index ?? 0])
+            venueImage.setImage(from: URLConfig.RandomImageUrls.venueUrls[viewModel?.index ?? 0], completion: nil)
             distanceLabel.text = self.viewModel?.distance?.inKilometerOrMeter
         }
     }

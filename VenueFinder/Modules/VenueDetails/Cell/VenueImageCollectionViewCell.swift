@@ -14,7 +14,14 @@ class VenueImageCollectionViewCell: UICollectionViewCell {
     var imageUrl: String? {
         didSet {
             guard let url = imageUrl else {return}
-            venueImageView.setImage(from: url)
+            if self.venueImageView.image != nil {
+                self.venueImageView.activityStopAnimating()
+                return
+            }
+            self.venueImageView.activityStartAnimating()
+            venueImageView.setImage(from: url) {
+                self.venueImageView.activityStopAnimating()
+            }
         }
     }
     
