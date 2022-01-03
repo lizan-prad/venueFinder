@@ -10,6 +10,7 @@ import UIKit
 class VenueListViewController: UIViewController, Storyboarded {
 
     var viewModel: VenueListViewModel!
+    var datasourceHandler: VenueListTabeViewHandler!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -22,8 +23,8 @@ class VenueListViewController: UIViewController, Storyboarded {
     }
     
     func setupTableView() {
-        tableView.dataSource = self
-        tableView.delegate = self
+        tableView.dataSource = datasourceHandler
+        tableView.delegate = datasourceHandler
     }
     
     func bindViewModel() {
@@ -42,28 +43,12 @@ class VenueListViewController: UIViewController, Storyboarded {
 
 }
 
-extension VenueListViewController: UITableViewDataSource {
+extension VenueListViewController: VenueListTableViewDelegate {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.viewModel.venues.value?.count ?? 0
+    func didSelectItem(_ venueId: String?) {
+        guard let navigationController = self.navigationController, let id = venueId else {return}
+        let venueDetailsCoordinator = VenueDetailsCoordinator.init(navigationController: navigationController, venueId: id, coreDataManager: viewModel.coreDataManager)
+        venueDetailsCoordinator.start()
     }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: StringConstants.TableViewCells.venueListCell) as! VenueListTableViewCell
-        var viewModel = self.viewModel.venues.value?[indexPath.row]
-        viewModel?.index = indexPath.row
-        cell.viewModel = viewModel
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return viewModel.tableViewRowHeight
-    }
-}
-
-extension VenueListViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-    }
+   
 }

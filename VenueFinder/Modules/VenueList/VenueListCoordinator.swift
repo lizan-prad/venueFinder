@@ -27,6 +27,9 @@ class VenueListCoordinator: Coordinator {
         let vc = VenueListViewController.instantiate()
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         vc.viewModel = VenueListViewModel.init(coreDataManager: CoreDataManager.init(context: context))
+        let tableViewHandler = VenueListTabeViewHandler.init(viewModel: vc.viewModel)
+        tableViewHandler.delegate = vc
+        vc.datasourceHandler = tableViewHandler
         return vc
     }
 }

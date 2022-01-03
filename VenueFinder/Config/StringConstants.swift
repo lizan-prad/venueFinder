@@ -37,5 +37,9 @@ enum StringConstants {
     enum TableViewCells {
         static let venueListCell = "VenueListTableViewCell"
     }
+    
+    enum CollectionViewCells {
+        static let venueImageCell = "VenueImageCollectionViewCell"
+    }
 }
 

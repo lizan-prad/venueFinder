@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Venue Details View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="VenueDetailsViewController" id="Y6W-OH-hqX" customClass="VenueDetailsViewController" customModule="VenueFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Id0-Zh-BaO">
+                                <rect key="frame" x="20" y="113" width="374" height="255"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="255" id="aDL-mB-YhP"/>
+                                </constraints>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rUr-47-Z5S">
+                                <rect key="frame" x="0.0" y="398" width="414" height="57"/>
+                                <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="irx-lL-WMA"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="J4n-8Y-92y">
+                                    <size key="itemSize" width="44" height="44"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="VenueImageCollectionViewCell" id="CtG-d9-RMj" customClass="VenueImageCollectionViewCell" customModule="VenueFinder" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="6.5" width="44" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="zj2-8A-a97">
+                                            <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TEF-Iq-PSl">
+                                                    <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="TEF-Iq-PSl" secondAttribute="trailing" id="JDL-bq-DUj"/>
+                                                <constraint firstItem="TEF-Iq-PSl" firstAttribute="leading" secondItem="zj2-8A-a97" secondAttribute="leading" id="KVZ-a3-Rwm"/>
+                                                <constraint firstAttribute="bottom" secondItem="TEF-Iq-PSl" secondAttribute="bottom" id="Vea-4W-rR7"/>
+                                                <constraint firstItem="TEF-Iq-PSl" firstAttribute="top" secondItem="zj2-8A-a97" secondAttribute="top" id="tcL-c8-fhq"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="44" height="44"/>
+                                        <connections>
+                                            <outlet property="venueImageView" destination="TEF-Iq-PSl" id="0H8-eL-c4w"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venue" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ly-st-LfL">
+                                <rect key="frame" x="20" y="64" width="47" height="29"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Id0-Zh-BaO" secondAttribute="trailing" constant="20" id="2Ak-2s-Fld"/>
+                            <constraint firstItem="Id0-Zh-BaO" firstAttribute="top" secondItem="4ly-st-LfL" secondAttribute="bottom" constant="20" id="BVD-j3-SuB"/>
+                            <constraint firstItem="4ly-st-LfL" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="YxI-IV-feK"/>
+                            <constraint firstItem="rUr-47-Z5S" firstAttribute="top" secondItem="Id0-Zh-BaO" secondAttribute="bottom" constant="30" id="cME-97-ogF"/>
+                            <constraint firstItem="rUr-47-Z5S" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="fW5-ZB-dll"/>
+                            <constraint firstItem="rUr-47-Z5S" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="nB5-75-ZPy"/>
+                            <constraint firstItem="Id0-Zh-BaO" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="ogu-L2-aJX"/>
+                            <constraint firstItem="4ly-st-LfL" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="u1K-te-fef"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="photoView" destination="Id0-Zh-BaO" id="e39-Vp-rHp"/>
+                        <outlet property="venueNameLabel" destination="4ly-st-LfL" id="Epv-I8-MMS"/>
+                        <outlet property="venuePhotoCollectionView" destination="rUr-47-Z5S" id="kdv-gP-Ijc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="44.927536231884062" y="45.535714285714285"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+</document>

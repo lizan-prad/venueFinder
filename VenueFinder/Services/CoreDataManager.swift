@@ -14,7 +14,7 @@ class CoreDataManager {
     
     init(context: NSManagedObjectContext) {
         self.context = context
-    }
+    } 
     
     func saveContext() {
         do {

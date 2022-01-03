@@ -7,6 +7,13 @@
 
 import UIKit
 
+extension UIView {
+    
+    func setStandardCornerRadius() {
+        self.layer.cornerRadius = 4
+    }
+}
+
 extension UIViewController {
     
     class func instantiateFromStoryboard(_ name: String) -> Self {

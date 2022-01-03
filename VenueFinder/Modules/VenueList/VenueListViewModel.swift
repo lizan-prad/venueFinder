@@ -9,6 +9,7 @@ import UIKit
 
 struct VenueListTableViewCellModel {
     
+    var id: String?
     var name: String?
     var address: String?
     var image: URL?
@@ -25,6 +26,10 @@ struct VenueListViewModel {
     let tableViewRowHeight: CGFloat = 255
     
     var venues: Observable<[VenueListTableViewCellModel]> = Observable([])
+    
+    func getVenueId(_ index: Int) -> String? {
+        return venues.value?[index].id
+    }
     
     func fetchVenues(failure: @escaping (UIAlertController) -> Void) {
         guard let url = URL.init(string: URLConfig.venueList), let coordinate = LocationManager.shared.currentLocation?.coordinate else {
@@ -57,8 +62,9 @@ struct VenueListViewModel {
             case .success(let models):
                 if let models = models.first?.venue {
                     UserDefaults.standard.set(!models.isEmpty, forKey: StringConstants.UserDefaultsKey.appHasData)
+                    
                     self.venues.value = Array(Array(models).map({
-                        VenueListTableViewCellModel.init(name: $0.name, address: $0.addressDetails?.address, image: URL.init(string: $0.categories?.first?.icon?.iconUrl ?? ""), region: $0.addressDetails?.region, index: 0, distance: $0.distance)
+                        VenueListTableViewCellModel.init(id: $0.fsq_id, name: $0.name, address: $0.addressDetails?.address, image: URL.init(string: $0.categories?.first?.icon?.iconUrl ?? ""), region: $0.addressDetails?.region, index: 0, distance: $0.distance)
                     }).prefix(5))
                 }
             case .failure(_):
